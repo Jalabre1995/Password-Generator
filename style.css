@@ -1,0 +1,17 @@
+.content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background: lightgray;
+    width: 100%;
+    padding: 30px;
+
+}
+
+#display {
+    width: 100%;
+}
+
+#number {
+    width: 100%;
+    
+}
