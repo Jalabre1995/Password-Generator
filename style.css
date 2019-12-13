@@ -20,12 +20,17 @@
     margin-top: 10px;
 }
 
-.btn-primary {
+#red {
    background-color: red
 }
 
-.btn-secondary {
+#grey {
     background-color: grey;
     float: right ;
 }
 
+#submit {
+    background-color: green;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}

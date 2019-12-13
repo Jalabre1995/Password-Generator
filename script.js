@@ -1,35 +1,37 @@
 ///generate random password////
-var button1 = document.querySelector("#onclick")
-var button2 = document.querySelector("#onclick2")
+
+
+var Question = confirm("Uppercse and Lowercase letters are allowed.And use at least two characters in your password.");
 
 function generate() {
-    let complexity = document.getElementById("number2").value;
-    button1.textContent = onclick;
-
-    var length = 50,
-
-    ////password vlaues that are used/////
     
-     var letters = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","!","@","#","$","%","^","&","*","(",")","_","+","1","2","3","4","5","6","7","8","9","0"];
+    let complexity = document.getElementById("slider").value;
 
-     var password = "";
-    
-    ///create a for loop for password characters//////
+    ////Possible Password values////
+    let letters = ("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz12345678910!@#$%^&*()_+=");
 
+    let password = "";
+    ///create a for loop for password characters/////
     for(var i = 0; i <= complexity; i++){
-        password += password + letters.charAt(Math.floor(Math.random * Math.floor(letters.length -1)));
+        password = password + letters.charAt(Math.floor(Math.random() * Math.floor(letters.length -1)));
     }
-return password;
 
-    
-}
-    ///add text to the display////
     document.getElementById("dotted").value = password;
 
 
-button1.addEventListener("onclick", function() {
-    generate();
-    
-})
-    
+    document.getElementById("LastNums").innerHTML += password + "<br />";
+}
+    ////set the default length to 25////
+
+    document.getElementById("length").innerHTML = "length: 25";
+
+    function copy() {
+        var copyText = document.getElementById("copy");
+        copyText.select();
+        copyText.setSelectionRange(0,25)
+        document.execCommand(onclick="copy");
+        alert("Text Copied" +copyText.value);
+
+    }
+
 
