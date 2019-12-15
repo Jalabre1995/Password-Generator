@@ -1,7 +1,7 @@
 ///generate random password////
 
 
-var Question = confirm("Uppercse and Lowercase letters are allowed.And use at least two characters in your password.");
+var Question = confirm("Uppercse and Lowercase letters are allowed. And use at least two characters in your password.");
 
 function generate() {
     
@@ -24,14 +24,24 @@ function generate() {
     ////set the default length to 25////
 
     document.getElementById("length").innerHTML = "length: 25";
+ 
 
-    function copy() {
-        var copyText = document.getElementById("copy");
-        copyText.select();
-        copyText.setSelectionRange(0,25)
-        document.execCommand(onclick="copy");
-        alert("Text Copied" +copyText.value);
-
+    function copyPassword() {
+        document.getElementById("dotted").select();
+       
+        document.execCommand("copy") ////Took me a while to figur ethis one out. All I had
+                                    //////to do was take th ecopy id out of my html. Exec already has copy built in its command.
+       
+        alert("Password Copied!");
     }
+    var submit1 = document.querySelector("#submit")
+    
+    function submit(){
+        submit1.addEventListener("click", function() {
+            alert("Password has been submitted")
+      
+            });
+        }
+        
 
-
+  
